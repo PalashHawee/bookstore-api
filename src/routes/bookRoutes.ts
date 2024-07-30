@@ -20,3 +20,5 @@ router.get('/', getAllBooks);
 router.get('/:id', getBook);
 router.put('/:id', modifyBook);
 router.delete('/:id', removeBook);
+
+export default router;

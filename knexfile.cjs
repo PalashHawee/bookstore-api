@@ -1,6 +1,6 @@
-// import dotenv from 'dotenv';
+import dotenv from 'dotenv';
 // CommonJS
-const dotenv = require('dotenv');
+// const dotenv = require('dotenv');
 
 dotenv.config();
 
