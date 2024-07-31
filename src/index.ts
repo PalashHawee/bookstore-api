@@ -1,18 +1,19 @@
 import express from 'express';
-import { check } from 'express-validator';
-import { addAuthor, getAllAuthors, getAuthor, modifyAuthor, removeAuthor } from '../controllers/authorController';
+import dotenv from 'dotenv';
+import bookRoutes from './routes/bookRoutes';
+import authorRoutes from './routes/authorRoutes';
 
-const router = express.Router();
+dotenv.config();
 
-router.post(
-  '/',
-  [check('name').not().isEmpty().withMessage('Name is required')],
-  addAuthor
-);
+const app = express();
+const port = process.env.PORT || 3000;
 
-router.get('/', getAllAuthors);
-router.get('/:id', getAuthor);
-router.put('/:id', modifyAuthor);
-router.delete('/:id', removeAuthor);
+app.use(express.json());
 
-export default router;
+app.use('/books', bookRoutes);
+app.use('/authors', authorRoutes);
+
+app.listen(port, () => {
+  console.log(`Server running on http://localhost:${port}`);
+});
+
