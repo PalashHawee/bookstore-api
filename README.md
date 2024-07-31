@@ -41,7 +41,7 @@ npm run dev
 
     
 ## Test the API
-You can test your API using tools like Postman, Insomnia, or even directly in the browser with extensions like RESTClient.
+Test the API using tools like Postman, Insomnia, or even directly in the browser with extensions like RESTClient.
 ### To test the API with Postman:
  1. Create a new request.
 
